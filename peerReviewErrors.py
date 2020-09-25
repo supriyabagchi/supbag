@@ -1,8 +1,8 @@
 # This is a header for the application
 # You should read this header and insert your name and your date below as part of the peer review
 # This is a typical part of any program
-# Author: <author>
-# Creation Date: <date>
+# Author: <Supriya>
+# Creation Date: <9/25/2020>
 # Below is a simple program with 10 issues (some are syntax errors and some are logic errors.  You need to identify the issues and correct them.
 
 import random
@@ -16,19 +16,16 @@ def displayIntro():
 	print()
 
 def chooseCave():
-    cave = ''
-	while cave != '1' and cave != '2':
-		print('Which cave will you go into? (1 or 2)')
-		cave = input()
-
-	return caves
+	print('Which cave will you go into? (1 or 2)')
+	cave = input()
+	return cave
 
 def checkCave(chosenCave):
 	print('You approach the cave...')
 	#sleep for 2 seconds
 	time.sleep(2)
 	print('It is dark and spooky...')
-	#sleep for 2 seconds
+	#sleep for 3 seconds
 	time.sleep(3)
 	print('A large dragon jumps out in front of you! He opens his jaws and...')
 	print()
@@ -39,16 +36,16 @@ def checkCave(chosenCave):
 	if chosenCave == str(friendlyCave):
 		print('Gives you his treasure!')
 	else:
-		print 'Gobbles you down in one bite!'
+		print ('Gobbles you down in one bite!')
 
 playAgain = 'yes'
-while playAgain = 'yes' or playAgain = 'y':
+while (playAgain == 'yes' or playAgain == 'y'):
 	displayIntro()
-	caveNumber = choosecave()
+	caveNumber = chooseCave()
 	checkCave(caveNumber)
     
 	print('Do you want to play again? (yes or no)')
 	playAgain = input()
 	if playAgain == "no":
-		print("Thanks for planing")
+		print("Thanks for playing")
 
