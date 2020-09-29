@@ -2,7 +2,9 @@
 # You should read this header and insert your name and your date below as part of the peer review
 # This is a typical part of any program
 # Author: <Supriya>
+# Update Name
 # Creation Date: <9/25/2020>
+# Update Date
 # Below is a simple program with 10 issues (some are syntax errors and some are logic errors.  You need to identify the issues and correct them.
 
 import random
