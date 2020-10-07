@@ -19,14 +19,14 @@ def getContent(url):
 if __name__=="__main__":
     print("welcome")
     Check="YES"
-    while True:
+    while (Check == 'yes' or Check == 'y' or Check == "YES"):
         try:
-            if(Check=="YES" or Check=="yes"):
-                zipcode=input("Enter The Zip Code:")
-                if (zipcode.isnumeric() == True and len(zipcode)==5):
-                    url="https://openweathermap.org/data/2.5/find?q="+str(zipcode)+"&appid=439d4b804bc8187953eb36d2a8c26a02&units=metric"
-                    jsonData=getContent(url)
-                    count=jsonData["list"]
+            zipcode=input("Enter The Zip Code:")
+            if (zipcode.isnumeric() == True and len(zipcode)==5):
+                url="https://openweathermap.org/data/2.5/find?q="+str(zipcode)+"&appid=439d4b804bc8187953eb36d2a8c26a02&units=metric"
+                jsonData=getContent(url)
+                count=jsonData["list"]
+                if(len(count)>0):
                     for i in range(len(count)):
                         print("Id::",count[i]["id"])
                         print("Name::",count[i]["name"])
@@ -35,11 +35,12 @@ if __name__=="__main__":
                         print("Max Temp::",count[i]["main"]["temp_max"])
                         print("Pressure::",count[i]["main"]["pressure"])
                         print("Humidity::",count[i]["main"]["humidity"])
-                    Check=input("YES OR NO::")
+                    Check=input("Do you want to continue - YES OR NO::")
                 else:
-                    print("Please Valid Zip Code")
+                    print("No data available for zip::{}".format(zipcode))
             else:
-                break
+                print("Please Valid Zip Code")
             
         except Exception as e:
             print("Please Valid Zip Code as numbers")
+    print("Thank you")
